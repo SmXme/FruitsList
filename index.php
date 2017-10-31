@@ -7,17 +7,23 @@
 	</head>
 	<body class="text-center">
 		<div class="container">
+			<input type="button" name="inputDebug" id="inputDebug" value="Debug" onclick="debug();">
 			<input type="text" name="inputFruits" id="inputFruits">
 			<input type="button" value = "Ajouter Fruit" name="inputButton" onclick="addFruits();">
 		<ul id="fruitsList"></ul>
+
 		<script>
 			var fruits = []
 			function addFruits() {
 				document.getElementById('fruitsList').innerHTML = "";
 				fruits.push(document.getElementById('inputFruits').value);
 				for (i = 0; i < fruits.length ; i++){
-					document.getElementById('fruitsList').innerHTML += "<li>"+fruits[i]+'</li>';
+					document.getElementById('fruitsList').innerHTML += '<li>'+fruits[i]+'<input type="button" value = "Supprimer" name="inputDelete" id="inputDelete" onclick=""></li>';
 				}
+			}
+			
+			function debug(){
+				console.log(fruits);
 			}
 		</script>
 	</div>
