@@ -7,41 +7,11 @@
 	</head>
 	<body class="text-center">
 		<div class="container">
-			<input type="button" name="inputDebug" id="inputDebug" value="Debug" onclick="debug();">
-			<input type="text" name="inputFruits" id="inputFruits" onkeypress="pressEnter();">
-			<input type="button" value = "Ajouter Fruit" name="inputButton"onclick="addFruits();">
+			<input type="button" name="inputDebug" id="inputDebug" value="Debug">
+			<input type="text" name="inputFruits" id="inputFruits">
+			<input type="button" value = "Ajouter Fruit" id ="inputButton" name="inputButton">
 		<ul id="fruitsList"></ul>
-		<script>
-			var fruits = []
-			function addFruits() {
-				fruits.push(document.getElementById('inputFruits').value);
-				showList();
-			}
-
-				function deleteThis(nb){
-				fruits.splice(nb,1);
-				showList();
-			}
-
-			function pressEnter(){
-				if (event.keyCode==13){
-					addFruits();
-					document.getElementById('inputFruits').value="";
-					document.getElementById('inputFruits').focus();
-
-				}
-			}
-			function showList(){
-				document.getElementById('fruitsList').innerHTML = "";
-				for (j = 0; j < fruits.length ; j++){
-				document.getElementById('fruitsList').innerHTML += '<li id="'+fruits[j]+'">'+fruits[j]+'<input type="button" value = "Supprimer" name="inputDelete" onclick ="deleteThis('+ j +');" id="inputDelete"></li>';
-				}
-			}
-
-			function debug(){
-				console.log(fruits);
-			}
-		
+		<script src="js/script.js">
 		</script>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
