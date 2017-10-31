@@ -8,8 +8,8 @@
 	<body class="text-center">
 		<div class="container">
 			<input type="button" name="inputDebug" id="inputDebug" value="Debug" onclick="debug();">
-			<input type="text" name="inputFruits" id="inputFruits">
-			<input type="button" value = "Ajouter Fruit" name="inputButton" onclick="addFruits();">
+			<input type="text" name="inputFruits" id="inputFruits" onkeypress="pressEnter();">
+			<input type="button" value = "Ajouter Fruit" name="inputButton"onclick="addFruits();">
 		<ul id="fruitsList"></ul>
 		<script>
 			var fruits = []
@@ -23,7 +23,14 @@
 				showList();
 			}
 
+			function pressEnter(){
+				if (event.keyCode==13){
+					addFruits();
+					document.getElementById('inputFruits').value="";
+					document.getElementById('inputFruits').focus();
 
+				}
+			}
 			function showList(){
 				document.getElementById('fruitsList').innerHTML = "";
 				for (j = 0; j < fruits.length ; j++){
