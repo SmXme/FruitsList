@@ -1,0 +1,13 @@
+#fruitsList{
+	list-style: none;
+	margin-top: 10vh;
+}
+#fruitsList li {
+	font-size: 2em;
+}
+
+#fruitsList li input{
+	font-size: 0.8em;
+	margin-left: 5vw; 
+	width: auto;
+}
